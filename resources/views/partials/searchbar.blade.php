@@ -15,11 +15,10 @@
             <div class=" col-md-12">
                 <div class="card mt-2 border-light shadow">
                     <div class="card-body pb-2 pt-3">
-                        <form>
+                        <form id="search_form" method="GET" action="{{ route('jobs',request('recruiter')) }}">
                             <div class="form-row">
                                 <div class="col-md-9 col-sm-12">
-                                    <input class="form-control mb-2 border-0" placeholder="Keyword: e.g. Job Title, Industry, Location"
-                                        type="text">
+                                    <input type="text" class="form-control mb-2 border-0 search_box" name="search" placeholder="Keyword: e.g. Job Title, Industry, Location">
 
                                 </div>
                                 <div class="col-md-3 col-sm-12">

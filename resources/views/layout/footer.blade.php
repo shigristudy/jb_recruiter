@@ -1,8 +1,8 @@
-<footer>
+<footer style="background-color: {{ $recruiter_website->color_code }}">
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h5>Job Bank</h5>
+                <h5>{{ ucfirst(request('recruiter')) }}</h5>
                 <h6>© {{ date('Y') }} - Job Bank,All Right Reserved</h6>
             </div>
         </div>
