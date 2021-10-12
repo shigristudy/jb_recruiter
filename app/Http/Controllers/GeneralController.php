@@ -64,7 +64,7 @@ class GeneralController extends Controller
             ),
             function ($message) use ($data,$file,$filename,$recipents) {
                 $message->subject('Job Application');
-                $message->from($data['email']);
+                $message->from('no-reply@job-bank.co.uk');
                 foreach ($recipents as $key => $recipent) {
                     $message->to($recipent);
                 }
