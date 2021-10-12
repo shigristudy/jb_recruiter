@@ -1,7 +1,7 @@
 <section class="pt-5 pb-5 mt-0 align-items-end d-flex bg-dark"
-    style="min-height: 75vh; background-position: center center; background-size: cover; background-image: url(https://images.unsplash.com/photo-1490578474895-699cd4e2cf59?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1651&amp;q=80);">
+    style="min-height: 75vh; background-position: center center; background-size: cover; background-image: url({{ config('app.job_bank_url') }}assets/recruiter_website/{{ $recruiter_website->franchise_id }}/{{ $recruiter_website->banner_image }});">
 
-    <div class="container" style="background-color: rgba(0,0,0,0.4);">
+    <div class="container" style="border-radius:5px;background-color: rgba(0,0,0,0.4);">
 
         <div class="row mt-auto">
             <div class="col-lg-12 col-sm-12 ">

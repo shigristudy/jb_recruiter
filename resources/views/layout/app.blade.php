@@ -52,6 +52,12 @@
         .navbar-light .navbar-nav .active>.nav-link{
             color: #ffffff;
         }
+
+        .items-link a:hover{
+            background: {{ $recruiter_website->color_code }};
+        }
+
+
     </style>
 </head>
 <body>

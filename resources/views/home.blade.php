@@ -14,7 +14,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12 col-sm-12 col-lg-6">
-                <img src="{{ asset('theme/images/aboutimg.svg') }}" alt="">
+                <img src="{{ config('app.job_bank_url') }}assets/recruiter_website/{{ $recruiter_website->franchise_id }}/{{ $recruiter_website->about_image }}" alt="">
             </div>
             <div class="col-12 col-sm-12 col-lg-6">
                 <h5>OUR COMPANY</h5>

@@ -60,7 +60,7 @@
             <!-- Change Logo Img Here -->
             <a class="navbar-brand" href="{{ route('home',request('recruiter')) }}">
                 {{-- {{ ucfirst(request('recruiter')) }} --}}
-                <img src="http://jobbank.local/app/lib/images/{{ $franchise->Logo }}" alt="">
+                <img src="{{ config('app.job_bank_url') }}assets/recruiter_website/{{ $recruiter_website->franchise_id }}/{{ $recruiter_website->logo }}" alt="">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse"
                 data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -74,17 +74,20 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" data-scroll href="#home">Home.<span class="sr-only">(current)</span></a>
+                        <a class="nav-link" data-scroll href="#home">Home<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-scroll href="#about-us">About Us.</a>
+                        <a class="nav-link" data-scroll href="#about-us">About Us</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" data-scroll href="#listings">Jobs.</a>
+                        <a class="nav-link" data-scroll href="#listings">Jobs</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-scroll href="#contact-us">Contact Us.</a>
+                        <a class="nav-link" data-scroll href="#contact-us">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-3" style="border: 2px solid white;" data-scroll href="{{ config('app.job_bank_url') . $franchise->franchise_slug }}">Login</a>
                     </li>
 
                 </ul>

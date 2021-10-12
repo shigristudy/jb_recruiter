@@ -26,6 +26,8 @@ return [
     |
     */
 
+    'job_bank_url' => 'http://jobbank.local/',
+
     'env' => env('APP_ENV', 'production'),
 
     /*

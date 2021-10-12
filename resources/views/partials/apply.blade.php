@@ -19,7 +19,7 @@
             </div>
             <div class="row">
                 <div class="col-12 col-lg-6 email">
-                    <input placeholder="Your email" type="email" name="email" id="email" size="30" required>
+                    <input placeholder="Your Email" type="email" name="email" id="email" size="30" required>
                 </div>
                 <div class="col-12 col-lg-6 email">
                     <input placeholder="Contact Number" type="text" name="contact" id="contact" required>
@@ -45,7 +45,7 @@
             </div>
             <div class="row">
                 <div class="col-12 text-center">
-                    <button type="submit" class="btn_send_message mt-4 btn">Applay Now</button>
+                    <button type="submit" class="btn_send_message mt-4 btn">Apply Now</button>
                 </div>
             </div>
 

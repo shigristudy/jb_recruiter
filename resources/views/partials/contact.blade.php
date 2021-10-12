@@ -19,7 +19,7 @@
             </div>
             <div class="row">
                 <div class="col-12 col-lg-6 email">
-                    <input placeholder="Your email" type="email" name="email" id="email" required>
+                    <input placeholder="Your Email" type="email" name="email" id="email" required>
                 </div>
                 <div class="col-12 col-lg-6 email">
                     <input placeholder="Subject" type="subject" name="subject" id="subject" required>

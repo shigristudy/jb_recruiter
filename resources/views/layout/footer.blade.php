@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-12">
                 <h5>{{ ucfirst(request('recruiter')) }}</h5>
-                <h6>© {{ date('Y') }} - Job Bank,All Right Reserved</h6>
+                <h6>{{ $recruiter_website->footer }}</h6>
             </div>
         </div>
     </div>
