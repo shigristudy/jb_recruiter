@@ -335,3 +335,6 @@ h2{
 .nav-link {
     padding: .2rem 1rem;
 }
+.pagination{
+    flex-wrap: wrap;
+}
