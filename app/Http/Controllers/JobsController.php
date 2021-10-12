@@ -25,7 +25,7 @@ class JobsController extends Controller
 
     public function job($recruiter)
     {
-        if( request('type' == 1) ){
+        if( request('type') == 1 ){
             $job = RecruiterJob::query()->with('employer')->findOrFail(request('job_id'));
         }else if(request('type') == 2){
             $job = EmployerJob::query()->with('employer')->findOrFail(request('job_id'));
