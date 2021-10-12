@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\GeneralController;
 use App\Http\Controllers\JobsController;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/',function(){
@@ -20,3 +21,9 @@ Route::group(['prefix' => '{recruiter}'], function () {
 });
 
 Route::post('send_contact_us',[GeneralController::class,'send_contact_us'])->name('send_contact_us');
+
+
+Route::get('/artisan/cache-clear', function () {
+    $exitCode = Artisan::call('config:cache');
+    return $exitCode;
+});
