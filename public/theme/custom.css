@@ -338,3 +338,7 @@ h2{
 .pagination{
     flex-wrap: wrap;
 }
+
+.single-job-items{
+    background: #FFF;
+}
