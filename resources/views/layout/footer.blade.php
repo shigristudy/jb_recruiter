@@ -13,7 +13,7 @@
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" crossorigin="anonymous">
 </script>
-<script src="{{ asset('theme/js/bootstrap.min.js') }}"></script>
-<script src="{{ asset('theme/js/smooth-scroll.min.js') }}"></script>
-<script src="{{ asset('theme/js/main.js') }}"></script>
-<script src="{{ asset('js/app.js') }}"></script>
+<script src="{{ asset('public/theme/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('public/theme/js/smooth-scroll.min.js') }}"></script>
+<script src="{{ asset('public/theme/js/main.js') }}"></script>
+<script src="{{ asset('public/js/app.js') }}"></script>
