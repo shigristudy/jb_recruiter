@@ -13,7 +13,7 @@
     <link href="{{ asset('public/theme/css/main.css') }}" rel="stylesheet" />
     <link href="{{ asset('public/theme/custom.css') }}" rel="stylesheet" />
 
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('public/favicon.ico') }}" type="image/x-icon">
     <!-- Document Title -->
     <title>Job Bank | {{ ucfirst(request('recruiter')) }}</title>
     @stack('styles')
