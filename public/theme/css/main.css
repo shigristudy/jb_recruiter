@@ -41,7 +41,7 @@ html {
 }
 a {
   font-weight: 600;
-  color: #314584;
+  color: #6e757a;
   text-decoration: none;
   letter-spacing: 1px;
   position: relative;
@@ -67,7 +67,7 @@ h5,
 .h5,
 h6,
 .h6 {
-  color: #314584;
+  color: #6e757a;
   font-weight: 600;
   letter-spacing: 1px;
 }
@@ -79,7 +79,7 @@ h6,
   2. Typography
 ------------------------------------------------------------*/
 body {
-  color: #314584;
+  color: #6e757a;
   font-family: 'Work Sans', sans-serif;
   font-size: 14px;
   font-weight: 400;
@@ -123,7 +123,7 @@ h6,
   margin-bottom: 10px;
 }
 .about p {
-  color: #314584;
+  color: #6e757a;
 }
 p {
   font-size: 1.1rem;
@@ -169,14 +169,14 @@ p {
 .hero-btns a:first-child:hover {
   background-color: #fff;
   border:2px solid #FF3946;
-  color: #314584;
+  color: #6e757a;
   padding: 17px 35px;
   font-size: 1.0rem;
   border-radius: 30px;
   transition: all 0.3s ease;
 }
 .hero-btns a:last-child {
-  color: #314584;
+  color: #6e757a;
   padding: 17px 35px;
   font-size: 1.0rem;
 }
@@ -185,7 +185,7 @@ p {
   transition: all 0.3s ease;
 }
 .navbar-light .navbar-toggler {
-  color: #314584;
+  color: #6e757a;
   border: none;
 }
 .navbar-toggler {
@@ -208,7 +208,7 @@ p {
 .interactive-menu-button a span {
   height: 4px;
   position: absolute;
-  background: #314584;
+  background: #6e757a;
   text-indent: -999em;
   width: 100%;
   top: 6px;
@@ -218,7 +218,7 @@ p {
 .interactive-menu-button a span:after {
   content: '';
   height: 4px;
-  background: #314584;
+  background: #6e757a;
   width: 100%;
   position: absolute;
   top: -6px;
@@ -240,7 +240,7 @@ p {
 .navbar-nav .dropdown-menu {
   text-align: center;
   border: 0;
-  background-color: #314584;
+  background-color: #6e757a;
 }
 .navbar-nav .dropdown-menu a {
   color: #fff;
@@ -251,7 +251,7 @@ p {
 .dropdown-item:focus, .dropdown-item:hover {
   color: #FF3946!important;
   text-decoration: none;
-  background-color: #314584;
+  background-color: #6e757a;
 }
 .service-btn a {
   color: #fff!important;
@@ -271,7 +271,7 @@ p {
   padding: 20px 30px;
 }
 .more-btn a:hover {
-  color: #314584!important;
+  color: #6e757a!important;
 }
 .contact-btn {
   text-align: center;
@@ -281,13 +281,13 @@ p {
   color: #fff!important;
 }
 .contact-btn a:hover {
-  color: #314584!important;
+  color: #6e757a!important;
 }
 /*-----------------------------------------------------------
   4. Header
 -------------------------------------------------------------*/
 .navbar-light .navbar-nav .nav-link {
-  color: #314584;
+  color: #6e757a;
   font-size: 1.1rem;
 }
 .hero-btns {
@@ -330,7 +330,7 @@ p {
 }
 .services p {
   font-size: 1.0rem;
-  color: #314584;
+  color: #6e757a;
   line-height: 1.5rem;
 }
 .side-img img {
@@ -394,7 +394,7 @@ p {
   width: 0;
   height: 0;
   padding: 25%;
-  background-color: #314584;
+  background-color: #6e757a;
   opacity: 0.8;
   border-radius: 50%;
   position: absolute;
@@ -462,7 +462,7 @@ p {
 }
 .blog-box p:nth-child(3) {
   font-size: 1.2rem;
-  color: #314584;
+  color: #6e757a;
 }
 .slick-prev {
   position: absolute;
@@ -481,7 +481,7 @@ p {
   color: #BBBBBC;
 }
 .blog-slider button:hover {
-  color: #314584;
+  color: #6e757a;
   transition: all 0.3s ease;
 }
 .blog-first {
@@ -512,7 +512,7 @@ p {
   margin-top: 20px;
 }
 #blog-btn:hover {
-  color: #314584;
+  color: #6e757a;
 }
 .hide-me {
   display: none;
@@ -529,24 +529,24 @@ p {
   background-color: #F4FAFE;
   border: none;
   padding: 0px 20px;
-  color: #314584;
+  color: #6e757a;
   font-weight: 600;
   margin-bottom: 15px;
 }
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-  color: #314584;
+  color: #6e757a;
   font-weight: 600;
 }
 ::-moz-placeholder { /* Firefox 19+ */
-  color: #314584;
+  color: #6e757a;
   font-weight: 600;
 }
 :-ms-input-placeholder { /* IE 10+ */
-  color: #314584;
+  color: #6e757a;
   font-weight: 600;
 }
 :-moz-placeholder { /* Firefox 18- */
-  color: #314584;
+  color: #6e757a;
   font-weight: 600;
 }
 textarea {
@@ -555,14 +555,14 @@ textarea {
   width: 100%;
   padding: 20px;
   margin-top: 15px;
-  color: #314584;
+  color: #6e757a;
   font-weight: 600;
 }
 /*-----------------------------------------------------------
   10. Footer
 -------------------------------------------------------------*/
 footer {
-  background-color: #314584;
+  background-color: #6e757a;
   width: 100%;
   text-align: center;
   padding: 70px 0px 0px 0px;
