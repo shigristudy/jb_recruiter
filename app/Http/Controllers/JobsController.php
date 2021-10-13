@@ -17,7 +17,7 @@ class JobsController extends Controller
     {
         $jobs = EmployerJob::query()
             ->orderBy('date_posted', 'DESC')
-            ->paginate(10);
+            ->paginate(30);
         $paginate = true;
         $uploader = 0;
         return view('listing', compact('jobs','paginate','uploader'));
@@ -50,7 +50,7 @@ class JobsController extends Controller
             $query = $query->orWhere('town_city', 'like', '%' . request('search') . '%');
         }
 
-        $EmployerJobs = $query->orderBy('date_posted', 'DESC')->paginate(10);
+        $EmployerJobs = $query->orderBy('date_posted', 'DESC')->paginate(15);
 
         $recruiter = Recruiter::query()->with('employers')->where('franchise_slug',request('recruiter'))->first();
 
@@ -69,7 +69,7 @@ class JobsController extends Controller
             $recruiter_query = $recruiter_query->orWhere('town_city', 'like', '%' . request('search') . '%');
         }
 
-        $recruiter_query = $recruiter_query->orderBy('date_posted', 'DESC')->paginate(10);
+        $recruiter_query = $recruiter_query->orderBy('date_posted', 'DESC')->paginate(15);
         $html = view('partials.job_card')->with([
             'jobs'     => $recruiter_query,
             'uploader' => 1,
