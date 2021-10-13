@@ -83,6 +83,9 @@
         textarea{
             background-color: #f6f6f6;
         }
+        .btn_send_message{
+            box-shadow: unset !important;
+        }
 
     </style>
 </head>
