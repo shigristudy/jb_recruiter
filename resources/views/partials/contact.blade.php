@@ -27,7 +27,7 @@
             </div>
             <div class="row">
                 <div class="col-12 message">
-                    <textarea id="message" name="message" rows="5" cols="1" placeholder="Message here..."></textarea>
+                    <textarea id="message" name="message" rows="5" cols="1" placeholder="Message..."></textarea>
                 </div>
             </div>
             <div class="row">

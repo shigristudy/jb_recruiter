@@ -5,7 +5,7 @@
                 <h6>{{ $recruiter_website->footer }}</h6>
             </div>
             <div class="col-md-6 text-sm-right text-center">
-                <a style="text-decoration: underline;color: #FFFFFF;" href="{{ route('privacy',request('recruiter')) }}">Privacy & Cookie Policy</a>
+                <a style="color: #FFFFFF;" href="{{ route('privacy',request('recruiter')) }}">Privacy & Cookie Policy</a>
             </div>
         </div>
     </div>
