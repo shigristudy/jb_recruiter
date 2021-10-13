@@ -59,7 +59,7 @@
         <nav class="navbar navbar-expand-lg navbar-light ">
             <!-- Change Logo Img Here -->
             <a class="navbar-brand" href="{{ route('home',request('recruiter')) }}">
-                <img src="{{ config('app.job_bank_url') }}assets/recruiter_website/{{ $recruiter_website->franchise_id }}/{{ $recruiter_website->logo }}" alt="">
+                <img style="max-width: 150px;" src="{{ config('app.job_bank_url') }}assets/recruiter_website/{{ $recruiter_website->franchise_id }}/{{ $recruiter_website->logo }}" alt="">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse"
                 data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"

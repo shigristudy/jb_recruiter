@@ -22,7 +22,7 @@
                     <input placeholder="Your Email" type="email" name="email" id="email" required>
                 </div>
                 <div class="col-12 col-lg-6 email">
-                    <input placeholder="Subject" type="subject" name="subject" id="subject" required>
+                    <input placeholder="Contact Number" type="subject" name="text" id="contact_number" required>
                 </div>
             </div>
             <div class="row">

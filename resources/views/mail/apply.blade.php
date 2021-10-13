@@ -89,7 +89,7 @@
 
       .footer {
         clear: both;
-        margin-top: 10px;
+        /* margin-top: 10px; */
         text-align: center;
         width: 100%;
       }
@@ -330,6 +330,11 @@
         }
       }
 
+      .wider{
+        font-weight: bold;
+        font-size: 20px;
+      }
+
     </style>
   </head>
   <body class="">
@@ -340,6 +345,17 @@
         <td class="container">
           <div class="content">
 
+            <!-- START HEADER -->
+            <div class="footer">
+                <table role="presentation" border="0" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td class="content-block powered-by" style="color:#FFF;background:{{ $color }};">
+                        <img style="width: 150px;" src="{{ $image }}" alt="">
+                    </td>
+                  </tr>
+                </table>
+              </div>
+              <!-- END HEADER -->
             <!-- START CENTERED WHITE CONTAINER -->
             <table role="presentation" class="main">
 
@@ -348,19 +364,21 @@
                 <td class="wrapper">
                   <table role="presentation" border="0" cellpadding="0" cellspacing="0">
                     <tr>
-                      <td>
-                        <p>Hi there,</p>
-                        <p>You have recieved a Job Application Please Check the Details below: </p>
-                        <p><b>Details: </b></p>
-                        <p><b>Name:</b> {{ $name }} </p>
-                        <p><b>Email:</b> {{ $email }}</p>
-                        <p><b>Contact:</b> {{ $contact }}</p>
-
-                        <p>{{ $availability }}</p>
-
-                        <p>Regards, {{ $name }}</p>
-                        <p></p>
-                      </td>
+                        <td>
+                            <p class="wider">Hi there,</p>
+                            <p>You have received a Message: </p>
+                            <br>
+                            <p class="wider"><b>Details: </b></p>
+                            <p><b>Name:</b> {{ $name }} </p>
+                            <p><b>Email:</b> {{ $email }}</p>
+                            <p><b>Contact Number:</b> {{ $contact }}</p>
+                            <br>
+                            <p class="wider">Message:</p>
+                            <p>{{ $availability }}</p>
+                            <br>
+                            <p>Regards, {{ $name }}</p>
+                            <p></p>
+                        </td>
                     </tr>
                   </table>
                 </td>
@@ -374,13 +392,8 @@
             <div class="footer">
               <table role="presentation" border="0" cellpadding="0" cellspacing="0">
                 <tr>
-                  <td class="content-block">
-                    <span class="apple-link">{{ $company_address }}</span>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="content-block powered-by">
-                    Powered by <a href="https://login.job-bank.co.uk/">Job Bank</a>.
+                  <td class="content-block powered-by" style="color:#FFF;background:{{ $color }};">
+                    <img src="https://login.job-bank.co.uk/app/lib/images/job-bank.jpg" style="width: 150px;" alt="job-bank.jpg">
                   </td>
                 </tr>
               </table>

@@ -12,15 +12,15 @@ class GeneralController extends Controller
 {
     public function home()
     {
-
-
         $jobs = EmployerJob::query()->orderBy('date_posted', 'DESC')->take(5)->get();
-
         return view('home', compact('jobs'));
     }
 
     public function send_contact_us(Request $request)
     {
+        $website = $this->getRecruiterWebsiteData();
+        $image = config('app.job_bank_url').'assets/recruiter_website/'. $website->franchise_id . '/' . $website->logo;
+        $color = $website->color_code;
 
         $data = $request->all();
         $recipents = $this->getRecruiterEmails();
@@ -29,8 +29,10 @@ class GeneralController extends Controller
             array(
                 'name' => $data['first_name'] . " " . $data['last_name'],
                 'email' => $data['email'],
-                'subject' => $data['subject'],
+                'contact_number' => $data['contact_number'],
                 'message_query' => $data['message'],
+                'color' => $color,
+                'image'=> $image
             ),
             function ($message) use ($data,$recipents) {
                 $message->subject($data['subject']);
@@ -50,11 +52,15 @@ class GeneralController extends Controller
 
     public function apply_job(Request $request)
     {
+        $website = $this->getRecruiterWebsiteData();
+        $image = config('app.job_bank_url').'assets/recruiter_website/'. $website->franchise_id . '/' . $website->logo;
+        $color = $website->color_code;
 
         $data = $request->all();
         $recipents = $this->getRecruiterEmails();
         $file = file_get_contents($request->file);
         $filename = $request->file->getClientOriginalName();
+
         Mail::send(
             'mail.apply',
             array(
@@ -63,7 +69,9 @@ class GeneralController extends Controller
                 'subject' => "Job Application",
                 'availability' => $data['availability'],
                 'contact' => $data['contact'],
-                'company_address' => "Job Bank"
+                'company_address' => "Job Bank",
+                'color' => $color,
+                'image' => $image
             ),
             function ($message) use ($data,$file,$filename,$recipents) {
                 $message->subject('Job Application');
