@@ -1,5 +1,5 @@
 <section class="pt-5 pb-5 mt-0 align-items-end d-flex bg-dark"
-    style="min-height: 75vh; background-position: center center; background-size: cover; background-image: url({{ config('app.job_bank_url') }}assets/recruiter_website/{{ $recruiter_website->franchise_id }}/{{ $recruiter_website->banner_image }});">
+    style="min-height: 75vh; background-position: center center; background-size: cover; background-image: url('{{ config('app.job_bank_url') }}assets/recruiter_website/{{ $recruiter_website->franchise_id }}/{{ $recruiter_website->banner_image }}');">
 
     <div class="container" style="border-radius:5px;background-color: rgba(0,0,0,0.4);">
 
