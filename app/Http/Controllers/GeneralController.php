@@ -60,6 +60,18 @@ class GeneralController extends Controller
         $recipents = $this->getRecruiterEmails();
         $file = file_get_contents($request->file);
         $filename = $request->file->getClientOriginalName();
+        if( $request->type == 1 ){
+            $job = RecruiterJob::query()->with('employer')->findOrFail($request->job_id);
+        }else if($request->type == 2){
+            $job = EmployerJob::query()->with('employer.detail')->findOrFail($request->job_id);
+        }
+        if($job){
+            $title = $job->title;
+            $location = $job->town_city;
+        }else{
+            $title = "";
+            $location = "";
+        }
 
         Mail::send(
             'mail.apply',
@@ -71,7 +83,9 @@ class GeneralController extends Controller
                 'contact' => $data['contact'],
                 'company_address' => "Job Bank",
                 'color' => $color,
-                'image' => $image
+                'image' => $image,
+                'title' => $title,
+                'location' => $location
             ),
             function ($message) use ($data,$file,$filename,$recipents) {
                 $message->subject('Job Application');

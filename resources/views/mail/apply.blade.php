@@ -366,7 +366,7 @@
                     <tr>
                         <td>
                             <p class="wider">Hi there,</p>
-                            <p>You have received a Message: </p>
+                            <p>You have recieved a Job Application for one of your {{ $title }}, {{ $location }}</p>
                             <br>
                             <p class="wider"><b>Details: </b></p>
                             <p><b>Name:</b> {{ $name }} </p>
