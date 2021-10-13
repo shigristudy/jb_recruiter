@@ -392,9 +392,9 @@
             <div class="footer">
               <table role="presentation" border="0" cellpadding="0" cellspacing="0">
                 <tr>
-                  <td class="content-block powered-by" style="color:#FFF;background:{{ $color }};">
-                    <img src="https://login.job-bank.co.uk/app/lib/images/job-bank.jpg" style="width: 150px;" alt="job-bank.jpg">
-                  </td>
+                    <td class="content-block powered-by">
+                        Powered by <a href="https://login.job-bank.co.uk/">Job Bank</a>.
+                    </td>
                 </tr>
               </table>
             </div>
