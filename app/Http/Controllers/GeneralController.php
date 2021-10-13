@@ -77,4 +77,9 @@ class GeneralController extends Controller
             'message' => "You have Successfully Applied to this Job."
         ]);
     }
+
+
+    public function privacy(){
+        return view('privacy');
+    }
 }

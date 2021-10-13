@@ -8,14 +8,15 @@
                 </a>
                 <ul>
                     <li>{{ $job->town_city }}</li>
-                    {{-- <li>{{ $job->postcode }}</li> --}}
                     <li>{{ $job->salary }}</li>
                 </ul>
+                <a class="employer_display_as">{{ $job->employer->detail->display_as }}</a>
             </div>
+
         </div>
         <div class="items-link items-link2 f-right">
             <a href="{{ route('job',['recruiter'=>request('recruiter')]) }}?type={{ ($job->is_gold) ? 2 : 1 }}&job_id={{ $job->id }}">Apply Now</a>
-            {{-- <span>{{ $job->date_posted->diffForHumans(now()) }}</span> --}}
+{{--             <span>{{ $job->date_posted->diffForHumans(now()) }}</span>--}}
         </div>
     </div>
 @endforeach

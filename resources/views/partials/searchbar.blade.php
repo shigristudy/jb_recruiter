@@ -6,7 +6,7 @@
         <div class="row mt-auto">
             <div class="col-lg-12 col-sm-12 ">
                 <div class="text-center text-lg-left">
-                    <h1 class="text-center display-3 text-white font-weight-bold text-shadow">Search Jobs</h1>
+                    <h1 class="text-center display-3 text-white font-weight-bold text-shadow">SEARCH JOBS</h1>
                 </div>
 
             </div>
@@ -22,7 +22,7 @@
 
                                 </div>
                                 <div class="col-md-3 col-sm-12">
-                                    <button class="btn btn-primary btn-block  shadow" type="submit">Search</button>
+                                    <button class="btn btn-primary btn-block  shadow" type="submit">SEARCH</button>
                                 </div>
                             </div>
                         </form>

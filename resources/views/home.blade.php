@@ -4,8 +4,12 @@
 <!-- SERVICES Listing -->
 <section id="listings" class="services">
     <div class="container">
-        <h2>Recent Jobs</h2>
+        <h2>Featured Jobs</h2>
         @include('partials.job_card')
+
+        <br>
+
+        <a class="explore-all-jobs" href="{{ route('jobs',request('recruiter')) }}">EXPLORE ALL JOBS</a>
     </div>
 </section>
 

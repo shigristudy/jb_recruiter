@@ -1,5 +1,5 @@
 .top-bar {
-    /* background-color: rgb(18, 190, 18); */
+    background: white;
 }
 
 .top-bar ul li {
@@ -110,6 +110,7 @@
         color: #FFFFFF;
         font-size: 12px;
     }
+
 }
 
 .justify-content-center-or-between {
@@ -271,7 +272,7 @@ body{
 
 
 .custom-file-label{
-    background: #F4FAFE;
+    background: #f6f6f6;
     border: unset;
 }
 
@@ -341,4 +342,15 @@ h2{
 
 .single-job-items{
     background: #FFF;
+}
+
+
+.navbar-light .navbar-toggler{
+    color: white;
+}
+.interactive-menu-button a span:before, .interactive-menu-button a span:after{
+    background: #FFFFFF;;
+}
+.interactive-menu-button a span{
+    background: #FFFFFF;
 }

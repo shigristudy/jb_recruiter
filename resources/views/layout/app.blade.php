@@ -8,12 +8,14 @@
 
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,600&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"  type='text/css'>
-    <link href="{{ asset('public/theme/css/bootstrap.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('theme/css/bootstrap.min.css') }}" rel="stylesheet" />
 
-    <link href="{{ asset('public/theme/css/main.css') }}" rel="stylesheet" />
-    <link href="{{ asset('public/theme/custom.css') }}" rel="stylesheet" />
+    <link href="{{ asset('theme/css/main.css') }}" rel="stylesheet" />
+    <link href="{{ asset('theme/custom.css') }}" rel="stylesheet" />
+
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <!-- Document Title -->
-    <title>JB Recruiter</title>
+    <title>Job Bank | {{ ucfirst(request('recruiter')) }}</title>
     @stack('styles')
     <style>
         .btn-primary {
@@ -23,6 +25,15 @@
         .page-item.active .page-link {
             background-color: {{ $recruiter_website->color_code }};
             border-color: {{ $recruiter_website->color_code }};
+        }
+        .explore-all-jobs {
+            text-align: center;
+            display: block;
+            color: {{ $recruiter_website->color_code }};
+        }
+
+        a:focus, a:hover{
+            color: {{ $recruiter_website->color_code }};
         }
         .page-link{
             color: unset;
@@ -55,8 +66,19 @@
 
         .items-link a:hover{
             background: {{ $recruiter_website->color_code }};
+            background: {{ $recruiter_website->color_code }};
         }
 
+        .btn-primary:hover {
+            background-color:  {{ $recruiter_website->color_code }};
+            border-color:  {{ $recruiter_website->color_code }};;
+        }
+        .email input{
+            background-color: #f6f6f6;
+        }
+        textarea{
+            background-color: #f6f6f6;
+        }
 
     </style>
 </head>

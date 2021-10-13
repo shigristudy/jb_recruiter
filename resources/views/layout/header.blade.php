@@ -59,7 +59,6 @@
         <nav class="navbar navbar-expand-lg navbar-light ">
             <!-- Change Logo Img Here -->
             <a class="navbar-brand" href="{{ route('home',request('recruiter')) }}">
-                {{-- {{ ucfirst(request('recruiter')) }} --}}
                 <img src="{{ config('app.job_bank_url') }}assets/recruiter_website/{{ $recruiter_website->franchise_id }}/{{ $recruiter_website->logo }}" alt="">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -71,25 +70,30 @@
                     </a>
                 </div>
             </button>
+            @php
+                $route_prefix = url('/')  . '/' . request('recruiter') . "#";
+                if ( request()->route()->getName() == "home" ){
+                    $route_prefix = "#";
+                }
+            @endphp
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
                         <a class="nav-link" data-scroll href="{{ route('home',request('recruiter')) }}">Home<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-scroll href="#about-us">About Us</a>
+                        <a class="nav-link" data-scroll href="{{ $route_prefix }}about-us">About Us</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" data-scroll href="#listings">Jobs</a>
+                        <a class="nav-link" data-scroll href="{{ $route_prefix }}listings">Jobs</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-scroll href="#contact-us">Contact Us</a>
+                        <a class="nav-link" data-scroll href="{{ $route_prefix }}contact-us">Contact Us</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link px-3" style="border: 2px solid white;" data-scroll href="{{ config('app.job_bank_url') . $franchise->franchise_slug }}">Login</a>
                     </li>
-
                 </ul>
             </div>
         </nav>
