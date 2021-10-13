@@ -38,7 +38,7 @@
 
             <div class="row alert_message" style="display: none;">
                 <div class="col-12 text-center">
-                    <p class="text-success">Thank You For Contacting Us</p>
+                    <p style="color: {{ $recruiter_website->color_code }}">Thank You For Contacting Us</p>
                 </div>
             </div>
         </form>

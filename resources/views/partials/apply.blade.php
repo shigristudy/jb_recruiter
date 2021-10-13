@@ -51,7 +51,7 @@
 
             <div class="row alert_message" style="display: none;">
                 <div class="col-12 text-center">
-                    <p class="text-success">Successfully Applied</p>
+                    <p style="color: {{ $recruiter_website->color_code }}">Successfully Applied</p>
                 </div>
             </div>
 
