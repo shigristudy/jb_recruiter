@@ -28,7 +28,7 @@ class JobsController extends Controller
         if( request('type') == 1 ){
             $job = RecruiterJob::query()->with('employer')->findOrFail(request('job_id'));
         }else if(request('type') == 2){
-            $job = EmployerJob::query()->with('employer')->findOrFail(request('job_id'));
+            $job = EmployerJob::query()->with('employer.detail')->findOrFail(request('job_id'));
         }else{
             return abort('404');
         }
