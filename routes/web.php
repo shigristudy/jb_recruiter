@@ -20,9 +20,9 @@ Route::group(['prefix' => '{recruiter}'], function () {
 
     Route::get('privacy',[GeneralController::class,'privacy'])->name('privacy');
 
+    Route::post('send_contact_us',[GeneralController::class,'send_contact_us'])->name('send_contact_us');
 });
 
-Route::post('send_contact_us',[GeneralController::class,'send_contact_us'])->name('send_contact_us');
 
 
 Route::get('/artisan/cache-clear', function () {
