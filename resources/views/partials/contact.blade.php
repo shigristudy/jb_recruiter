@@ -54,7 +54,7 @@
             $('.btn_send_message').attr('disabled',true)
 
             $.ajax({
-                url:"{{ route('send_contact_us') }}",
+                url:"{{ route('send_contact_us',request('recruiter')) }}",
                 method:'POST',
                 data:$(this).serialize(),
                 success:function(res){
