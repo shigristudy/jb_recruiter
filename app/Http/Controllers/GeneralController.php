@@ -29,7 +29,7 @@ class GeneralController extends Controller
             array(
                 'name' => $data['first_name'] . " " . $data['last_name'],
                 'email' => $data['email'],
-                'contact_number' => $data['contact_number'],
+                'contact' => $data['contact_number'],
                 'message_query' => $data['message'],
                 'color' => $color,
                 'image'=> $image
