@@ -38,7 +38,7 @@
 
             <div class="row alert_message" style="display: none;">
                 <div class="col-12 text-center">
-                    <p class="text-success">Thank You For Contacting Us.</p>
+                    <p class="text-success">Thank You For Contacting Us</p>
                 </div>
             </div>
         </form>

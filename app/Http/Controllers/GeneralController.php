@@ -23,6 +23,7 @@ class GeneralController extends Controller
     {
 
         $data = $request->all();
+        $recipents = $this->getRecruiterEmails();
         Mail::send(
             'mail.contact',
             array(
@@ -31,10 +32,12 @@ class GeneralController extends Controller
                 'subject' => $data['subject'],
                 'message_query' => $data['message'],
             ),
-            function ($message) use ($data) {
+            function ($message) use ($data,$recipents) {
                 $message->subject($data['subject']);
                 $message->from($data['email']);
-                $message->to('kabeerhussain14@gmail.com');
+                foreach ($recipents as $key => $recipent) {
+                    $message->to($recipent);
+                }
             }
         );
 
