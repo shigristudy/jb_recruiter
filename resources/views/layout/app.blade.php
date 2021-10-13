@@ -8,7 +8,7 @@
 
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,600&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"  type='text/css'>
-    <link href="{{ asset('theme/css/bootstrap.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('public/theme/css/bootstrap.min.css') }}" rel="stylesheet" />
 
     <link href="{{ asset('public/theme/css/main.css') }}" rel="stylesheet" />
     <link href="{{ asset('public/theme/custom.css') }}" rel="stylesheet" />
