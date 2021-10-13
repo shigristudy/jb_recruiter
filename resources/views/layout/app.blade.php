@@ -71,7 +71,11 @@
 
         .btn-primary:hover {
             background-color:  {{ $recruiter_website->color_code }};
-            border-color:  {{ $recruiter_website->color_code }};;
+            border-color:  {{ $recruiter_website->color_code }};
+        }
+        .btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle{
+            background-color:  {{ $recruiter_website->color_code }};
+            border-color:  {{ $recruiter_website->color_code }};
         }
         .email input{
             background-color: #f6f6f6;
