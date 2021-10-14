@@ -1,11 +1,16 @@
 <!-- TOP BAR SECTION -->
 <style>
+    .top-bar{
+        background: gray;
+        padding: 7px;
+    }
     .top-bar ul li {
-        border-right: 1px solid {{ $recruiter_website->color_code }};
+        border-right: 1px solid #FFF;
     }
 
     .top-bar ul li a {
-        color: {{ $recruiter_website->color_code }}
+        color: #FFF;
+        /* color: {{ $recruiter_website->color_code }} */
     }
     .navbar-light .navbar-nav .nav-link{
         color: #FFF;
