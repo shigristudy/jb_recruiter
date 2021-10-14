@@ -27,7 +27,7 @@
             </div>
             <div class="row">
                 <div class="col-12">
-                    <textarea id="availability" name="availability" rows="5" cols="1" required placeholder="Availablility"></textarea>
+                    <textarea id="availability" name="availability" rows="5" cols="1" required placeholder="Message"></textarea>
                 </div>
             </div>
             <div class="row">

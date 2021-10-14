@@ -10,7 +10,7 @@
                     <li>{{ $job->town_city }}</li>
                     <li>{{ $job->salary }}</li>
                 </ul>
-                <a class="employer_display_as">{{ $job->employer->detail->display_as }}</a>
+                {{-- <a class="employer_display_as">{{ $job->employer->detail->display_as }}</a> --}}
             </div>
 
         </div>

@@ -18,7 +18,7 @@
                         <form id="search_form" method="GET" action="{{ route('jobs',request('recruiter')) }}">
                             <div class="form-row">
                                 <div class="col-md-9 col-sm-12">
-                                    <input type="text" class="form-control mb-2 border-0 search_box" name="search" placeholder="Keyword: e.g. Job Title, Industry, Location">
+                                    <input type="text" class="form-control mb-2 border-0 search_box" name="search" placeholder="Keyword: e.g. Job Title">
 
                                 </div>
                                 <div class="col-md-3 col-sm-12">

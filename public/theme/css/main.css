@@ -229,13 +229,13 @@ p {
   top: 6px;
 }
 .interactive-menu-button a.active span {
-  background: transparent;
+  /* background: transparent; */
 }
 .interactive-menu-button a.active span:before {
-  transform: translateY(6px) translateX(1px) rotate(45deg);
+  /* transform: translateY(6px) translateX(1px) rotate(45deg); */
 }
 .interactive-menu-button a.active span:after {
-  transform: translateY(-6px) translateX(1px) rotate(-45deg);
+  /* transform: translateY(-6px) translateX(1px) rotate(-45deg); */
 }
 .navbar-nav .dropdown-menu {
   text-align: center;

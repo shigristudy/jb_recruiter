@@ -39,7 +39,7 @@ class JobsController extends Controller
     public function getAllJobs()
     {
 
-        $query = EmployerJob::query()->with('employer.employer_detail');
+        $query = EmployerJob::query()->with('employer.detail');
 
         if (request('search') != null && request('search') != "") {
             $query = $query->where('title', 'like', '%' . request('search') . '%');
