@@ -3,7 +3,7 @@
   <head>
     <meta name="viewport" content="width=device-width" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>Contact Us</title>
+    <title>Website Message</title>
     <style>
       /* -------------------------------------
           GLOBAL RESETS
@@ -338,7 +338,7 @@
     </style>
   </head>
   <body class="">
-    <span class="preheader">Contact Us</span>
+    <span class="preheader">Website Message</span>
     <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="body">
       <tr>
         <td>&nbsp;</td>
@@ -365,7 +365,7 @@
                   <table role="presentation" border="0" cellpadding="0" cellspacing="0">
                     <tr>
                         <td>
-                            <p class="wider">Hi there,</p>
+                            <p class="wider">Hello,</p>
                             <p>You have received a message on your Website: </p>
                             <br>
                             <p class="wider"><b>Details: </b></p>
@@ -393,7 +393,7 @@
               <table role="presentation" border="0" cellpadding="0" cellspacing="0">
                 <tr>
                     <td class="content-block powered-by">
-                        Powered by <a href="https://login.job-bank.co.uk/">Job Bank</a>.
+                        Powered by <a href="https://login.job-bank.co.uk/">Job Bank</a>
                     </td>
                 </tr>
               </table>

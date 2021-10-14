@@ -35,7 +35,7 @@ class GeneralController extends Controller
                 'image'=> $image
             ),
             function ($message) use ($data,$recipents) {
-                $message->subject('Contact Message');
+                $message->subject('Website Message');
                 $message->from('no-reply@job-bank.co.uk');
                 foreach ($recipents as $key => $recipent) {
                     $message->to($recipent);

@@ -365,8 +365,8 @@
                   <table role="presentation" border="0" cellpadding="0" cellspacing="0">
                     <tr>
                         <td>
-                            <p class="wider">Hi there,</p>
-                            <p>You have recieved a Job Application for one of your Jobs {{ $title }}, {{ $location }}</p>
+                            <p class="wider">Hello,</p>
+                            <p>You have recieved a Job Application for, {{ $title }} ({{ $location }}).</p>
                             <br>
                             <p class="wider"><b>Details: </b></p>
                             <p><b>Name:</b> {{ $name }} </p>
@@ -393,7 +393,7 @@
               <table role="presentation" border="0" cellpadding="0" cellspacing="0">
                 <tr>
                     <td class="content-block powered-by">
-                        Powered by <a href="https://login.job-bank.co.uk/">Job Bank</a>.
+                        Powered by <a href="https://login.job-bank.co.uk/">Job Bank</a>
                     </td>
                 </tr>
               </table>

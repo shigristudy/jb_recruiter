@@ -28,7 +28,7 @@
                         <label>{{ ucfirst($job->type) }}</label>
                     </div>
                 </div>
-                <div class="row">
+                {{-- <div class="row">
                     <div class="col-md-12">
                         <strong>Employer: </strong>
                         @if (request('type') == 1)
@@ -37,7 +37,7 @@
                             <label>{{ $job->employer->detail->display_as }}</label>
                         @endif
                     </div>
-                </div>
+                </div> --}}
 
                 <div class="row">
                     <div class="col-md-12">
