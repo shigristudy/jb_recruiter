@@ -23,7 +23,7 @@
             <div class="col-12 col-sm-12 col-lg-6">
                 <h5>OUR COMPANY</h5>
                 <h2>About Us</h2>
-                <p>{{ $recruiter_website->about }}</p>
+                <p class="text-justify">{{ $recruiter_website->about }}</p>
             </div>
         </div>
     </div>
