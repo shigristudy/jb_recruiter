@@ -30,6 +30,7 @@
     $(document).ready(function(){
         var search = getParameterByName('search',window.location.href);
         if(search){
+            $('.search_box').val(search)
             getJobs(null,search)
         }
 
