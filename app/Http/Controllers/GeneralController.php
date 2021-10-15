@@ -12,7 +12,7 @@ class GeneralController extends Controller
 {
     public function home()
     {
-        $jobs = EmployerJob::query()->orderBy('date_posted', 'DESC')->take(5)->get();
+        $jobs = EmployerJob::query()->where('status','live')->orderBy('date_posted', 'DESC')->take(5)->get();
         return view('home', compact('jobs'));
     }
 

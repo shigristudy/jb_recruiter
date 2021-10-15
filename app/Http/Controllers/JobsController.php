@@ -16,6 +16,7 @@ class JobsController extends Controller
     public function jobs()
     {
         $jobs = EmployerJob::query()
+            ->where('status','live')
             ->orderBy('date_posted', 'DESC')
             ->paginate(30);
         $paginate = true;
@@ -39,7 +40,8 @@ class JobsController extends Controller
     public function getAllJobs()
     {
 
-        $query = EmployerJob::query()->with('employer.detail');
+
+        $query = EmployerJob::query()->with('employer.detail')->where('status','live');
 
         if (request('search') != null && request('search') != "") {
             $query = $query->where('title', 'like', '%' . request('search') . '%');
