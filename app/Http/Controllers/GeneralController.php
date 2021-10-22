@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\EmployerJob;
+use App\Models\Recruiter;
 use App\Models\RecruiterJob;
 use App\Models\RecruiterWebsite;
 use Illuminate\Http\Request;
@@ -13,8 +14,14 @@ class GeneralController extends Controller
 {
     public function home()
     {
+        $recruiter = Recruiter::query()
+                            ->with('employers')
+                            ->where('franchise_slug',request('recruiter'))
+                            ->first();
+        $employers = $recruiter->employers->pluck('id')->toArray();
+
         $jobs = RecruiterJob::query()
-                    ->where('franchise_slug',request('recruiter'))
+                    ->whereIn('employer_id',$employers)
                     ->where('status','live')
                     ->orderBy('date_posted', 'DESC')
                     ->take(5)
