@@ -27,8 +27,13 @@ class GeneralController extends Controller
                     ->take(5)
                     ->get();
 
-        if($jobs->isEmpty()){
-            $jobs = EmployerJob::query()->where('status','live')->orderBy('date_posted', 'DESC')->take(5)->get();
+        $counts = $jobs->count();
+        if($counts < 5){
+            $jobs = EmployerJob::query()
+                                ->where('status','live')
+                                ->orderBy('date_posted', 'DESC')
+                                ->take(5 - $counts)
+                                ->get();
         }
         return view('home', compact('jobs'));
     }
