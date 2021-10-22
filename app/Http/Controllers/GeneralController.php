@@ -26,6 +26,10 @@ class GeneralController extends Controller
                     ->orderBy('date_posted', 'DESC')
                     ->take(5)
                     ->get();
+
+        if($jobs->isEmpty()){
+            $jobs = EmployerJob::query()->where('status','live')->orderBy('date_posted', 'DESC')->take(5)->get();
+        }
         return view('home', compact('jobs'));
     }
 

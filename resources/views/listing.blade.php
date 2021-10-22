@@ -8,9 +8,9 @@
         <div class="custom_tab_content active job_cards mb-4">
             @include('partials.job_card')
         </div>
-        <div class="custom_tab_content job_cards_recruiters mb-4">
+        {{-- <div class="custom_tab_content job_cards_recruiters mb-4">
             @include('partials.job_card')
-        </div>
+        </div> --}}
 
     </div>
 </section>
