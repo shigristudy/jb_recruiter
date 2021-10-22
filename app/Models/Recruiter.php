@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Recruiter extends Model
 {
@@ -11,7 +12,8 @@ class Recruiter extends Model
 
     protected $table = 'Franchise';
 
-    public function employers(){
+    public function employers(): HasMany
+    {
         return $this->hasMany(RecruiterEmployer::class,'franchise_id','franchise_id');
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\EmployerJob;
+use App\Models\RecruiterJob;
 use App\Models\RecruiterWebsite;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -12,7 +13,12 @@ class GeneralController extends Controller
 {
     public function home()
     {
-        $jobs = EmployerJob::query()->where('status','live')->orderBy('date_posted', 'DESC')->take(5)->get();
+        $jobs = RecruiterJob::query()
+                    ->where('franchise_slug',request('recruiter'))
+                    ->where('status','live')
+                    ->orderBy('date_posted', 'DESC')
+                    ->take(5)
+                    ->get();
         return view('home', compact('jobs'));
     }
 

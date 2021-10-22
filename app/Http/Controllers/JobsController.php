@@ -12,7 +12,6 @@ use Illuminate\Http\Request;
 
 class JobsController extends Controller
 {
-
     public function jobs()
     {
         $jobs = EmployerJob::query()
@@ -39,8 +38,6 @@ class JobsController extends Controller
 
     public function getAllJobs()
     {
-
-
         $query = EmployerJob::query()->with('employer.detail')->where('status','live');
 
         if (request('search') != null && request('search') != "") {

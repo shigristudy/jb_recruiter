@@ -24,9 +24,6 @@ class ReptileEgg extends FireDragon
 
     }
 
-
-
-
     public function hatch() : ?Reptile
     {
         return $this->layEgg();
