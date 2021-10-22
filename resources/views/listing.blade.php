@@ -4,13 +4,14 @@
 <section class="about" id="about-us" style="background: #f5f5f578;padding-top: 50px;padding-bottom: 40px;">
 
     <div class="container">
-
+        @if (isset($recruiter_jobs))
+            <div class="custom_tab_content job_cards_recruiters mb-4">
+                @include('partials.job_card',['jobs'=>$recruiter_jobs])
+            </div>
+        @endif
         <div class="custom_tab_content active job_cards mb-4">
             @include('partials.job_card')
         </div>
-        {{-- <div class="custom_tab_content job_cards_recruiters mb-4">
-            @include('partials.job_card')
-        </div> --}}
 
     </div>
 </section>
