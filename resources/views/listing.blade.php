@@ -29,6 +29,8 @@
         if(search){
             $('.search_box').val(search)
             getJobs(null,search)
+        }else{
+            getJobs(null,'')
         }
 
         $(document).on('click', '.pagination a', function(event){
