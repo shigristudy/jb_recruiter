@@ -28,7 +28,7 @@ class GeneralController extends Controller
                     ->get();
 
         $counts = $jobs->count();
-        dd($counts);
+        dd($counts,$jobs);
         if($counts < 5){
             $take = 5 - $counts;
             $jobs = EmployerJob::query()
