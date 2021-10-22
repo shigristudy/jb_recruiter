@@ -21,17 +21,6 @@ class JobsController extends Controller
         $paginate = true;
         $uploader = 0;
 
-        $recruiter = Recruiter::query()->with('employers')
-                                ->where('franchise_slug',request('recruiter'))
-                                ->first();
-
-        $employers = $recruiter->employers->pluck('id')->toArray();
-
-        $recruiter_jobs = RecruiterJob::query()
-                        ->whereIn('employer_id',$employers)
-                        ->where('status','live')
-                        ->paginate(30);
-
         return view('listing', compact('jobs','paginate','uploader'));
     }
 
