@@ -55,7 +55,10 @@ class JobsController extends Controller
 
         $EmployerJobs = $query->orderBy('date_posted', 'DESC')->paginate(15);
 
-        $recruiter = Recruiter::query()->with('employers')->where('franchise_slug',request('recruiter'))->first();
+        $recruiter = Recruiter::query()
+                            ->with('employers')
+                            ->where('franchise_slug',request('recruiter'))
+                            ->first();
 
         $employers = $recruiter->employers->pluck('id')->toArray();
 
@@ -64,12 +67,16 @@ class JobsController extends Controller
         $recruiter_query->whereIn('employer_id',$employers)->where('status','live')->get();
 
         if (request('search') != null && request('search') != "") {
-            $recruiter_query = $recruiter_query->where('title', 'like', '%' . request('search') . '%');
-            $recruiter_query = $recruiter_query->orWhere('type', 'like', '%' . request('search') . '%');
-            $recruiter_query = $recruiter_query->orWhere('salary', 'like', '%' . request('search') . '%');
-            $recruiter_query = $recruiter_query->orWhere('postcode', 'like', '%' . request('search') . '%');
-            $recruiter_query = $recruiter_query->orWhere('industry_sectors', 'like', '%' . request('search') . '%');
-            $recruiter_query = $recruiter_query->orWhere('town_city', 'like', '%' . request('search') . '%');
+            $recruiter_query->where(function($recruiter_query){
+                $recruiter_query
+                    ->where('title', 'like', '%' . request('search') . '%')
+                    ->orWhere('type', 'like', '%' . request('search') . '%')
+                    ->orWhere('salary', 'like', '%' . request('search') . '%')
+                    ->orWhere('postcode', 'like', '%' . request('search') . '%')
+                    ->orWhere('industry_sectors', 'like', '%' . request('search') . '%')
+                    ->orWhere('town_city', 'like', '%' . request('search') . '%');
+            });
+
         }
 
         $recruiter_query = $recruiter_query->orderBy('date_posted', 'DESC')->paginate(15);
