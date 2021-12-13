@@ -23,7 +23,7 @@ class VerfiyWebsiteAccess
             ->where('franchise_slug',request('recruiter'))
             ->first();
         if(!$recruiter){
-            return 1;
+            dd(1);
             abort(403, 'Access denied');
         }else{
             $hasWebsite = RecruiterWebsite::where('status','active')
