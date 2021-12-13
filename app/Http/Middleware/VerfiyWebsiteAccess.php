@@ -22,6 +22,7 @@ class VerfiyWebsiteAccess
         $recruiter = Recruiter::query()
             ->where('franchise_slug',request('recruiter'))
             ->firstOrFail();
+            dd($recruiter);
         if(!$recruiter){
             abort(404);
         }else{
