@@ -129,4 +129,10 @@ class GeneralController extends Controller
     public function privacy(){
         return view('privacy');
     }
+
+    public function error_404(){
+        return "Not Found";
+    }
+
+
 }

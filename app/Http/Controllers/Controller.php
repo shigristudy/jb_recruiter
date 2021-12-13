@@ -16,8 +16,7 @@ class Controller extends BaseController
 
     public function getRecruiter()
     {
-
-        return Recruiter::query()->where('franchise_slug',request('recruiter'))->firstOrFail();
+        return Recruiter::where('franchise_slug',request('recruiter'))->first();
     }
 
     public function getRecruiterID()
