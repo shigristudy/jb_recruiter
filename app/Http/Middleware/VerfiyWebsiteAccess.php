@@ -18,22 +18,22 @@ class VerfiyWebsiteAccess
      */
     public function handle(Request $request, Closure $next)
     {
-        abort(404);
-        // $recruiter = Recruiter::query()
-        //     ->where('franchise_slug',request('recruiter'))
-        //     ->first();
-        // if($recruiter){
-        //     $hasWebsite = RecruiterWebsite::where('status','active')
-        //                     ->where('franchise_id',$recruiter->franchise_id)
-        //                     ->first();
-        //     if($hasWebsite){
-        //         return $next($request);
-        //     }else{
-        //         return abort(403, 'Access denied');
-        //     }
-        // }else{
-        //     return abort(403, 'Access denied');
-        // }
+        // abort(404);
+        $recruiter = Recruiter::query()
+            ->where('franchise_slug',request('recruiter'))
+            ->first();
+        if($recruiter){
+            $hasWebsite = RecruiterWebsite::where('status','active')
+                            ->where('franchise_id',$recruiter->franchise_id)
+                            ->first();
+            if($hasWebsite){
+                return $next($request);
+            }else{
+                return abort(403, 'Access denied');
+            }
+        }else{
+            return abort(403, 'Access denied');
+        }
 
     }
 
