@@ -18,7 +18,7 @@ class VerfiyWebsiteAccess
      */
     public function handle(Request $request, Closure $next)
     {
-
+        dd(1);
         $recruiter = Recruiter::query()
             ->where('franchise_slug',request('recruiter'))
             ->firstOrFail();
