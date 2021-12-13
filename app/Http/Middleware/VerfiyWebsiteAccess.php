@@ -5,6 +5,7 @@ namespace App\Http\Middleware;
 use App\Models\Recruiter;
 use App\Models\RecruiterWebsite;
 use Closure;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
 
 class VerfiyWebsiteAccess
@@ -18,6 +19,7 @@ class VerfiyWebsiteAccess
      */
     public function handle(Request $request, Closure $next)
     {
+        throw (new ModelNotFoundException());
         // $recruiter = Recruiter::query()
         //     ->where('franchise_slug',request('recruiter'))
         //     ->first();
