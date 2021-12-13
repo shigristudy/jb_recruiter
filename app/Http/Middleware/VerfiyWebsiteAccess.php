@@ -21,19 +21,19 @@ class VerfiyWebsiteAccess
         $recruiter = Recruiter::query()
             ->where('franchise_slug',request('recruiter'))
             ->first();
-        if(!$recruiter){
-
-            return abort(403, 'Access denied');
-        }else{
+        if($recruiter){
             $hasWebsite = RecruiterWebsite::where('status','active')
                             ->where('franchise_id',$recruiter->franchise_id)
                             ->first();
-            if(!$hasWebsite){
+            if($hasWebsite){
+                return $next($request);
+            }else{
                 return abort(403, 'Access denied');
             }
+        }else{
+            return abort(403, 'Access denied');
         }
 
-        return $next($request);
     }
 
     public function render($request, Exception $exception)
