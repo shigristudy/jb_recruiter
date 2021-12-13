@@ -23,13 +23,13 @@ class VerfiyWebsiteAccess
             ->where('franchise_slug',request('recruiter'))
             ->first();
         if(!$recruiter){
-            return redirect()->route('not_found');
+            // return redirect()->route('not_found');
         }else{
             $hasWebsite = RecruiterWebsite::where('status','active')
                             ->where('franchise_id',$recruiter->franchise_id)
                             ->first();
             if(!$hasWebsite){
-                return redirect()->route('not_found');
+                // return redirect()->route('not_found');
             }
         }
 
