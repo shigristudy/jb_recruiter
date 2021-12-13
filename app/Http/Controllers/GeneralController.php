@@ -17,7 +17,7 @@ class GeneralController extends Controller
         $recruiter = Recruiter::query()
                             ->with('employers')
                             ->where('franchise_slug',request('recruiter'))
-                            ->first();
+                            ->firstOrFail();
         $employers = $recruiter->employers->pluck('id')->toArray();
 
         $jobs = RecruiterJob::query()
