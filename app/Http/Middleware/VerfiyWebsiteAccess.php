@@ -20,11 +20,11 @@ class VerfiyWebsiteAccess
     public function handle(Request $request, Closure $next)
     {
 
-        return throw new ModelNotFoundException();
+        // return throw new ModelNotFoundException();
 
-        // $recruiter = Recruiter::query()
-        //     ->where('franchise_slug',request('recruiter'))
-        //     ->first();
+        $recruiter = Recruiter::query()
+            // ->where('franchise_slug',request('recruiter'))
+            ->findOrFail(request('recruiter_id'),'franchise_slug');
         // if(!$recruiter){
         //     dd(1);
         //     abort(403, 'Access denied');
