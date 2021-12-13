@@ -18,12 +18,12 @@ class VerfiyWebsiteAccess
      */
     public function handle(Request $request, Closure $next)
     {
-
-        abort(404);
+        // return abort("404");
         $recruiter = Recruiter::query()
             ->where('franchise_slug',request('recruiter'))
             ->first();
         if(!$recruiter){
+            dd(1);
             abort(403, 'Access denied');
         }else{
             $hasWebsite = RecruiterWebsite::where('status','active')
