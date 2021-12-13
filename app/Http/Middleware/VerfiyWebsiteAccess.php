@@ -38,6 +38,7 @@ class VerfiyWebsiteAccess
 
     public function render($request, Exception $exception)
     {
+        dd($exception);
         return response()->view('errors.403', [], 403);
     }
 }
