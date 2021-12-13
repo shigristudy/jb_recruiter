@@ -5,7 +5,6 @@ namespace App\Http\Middleware;
 use App\Models\Recruiter;
 use App\Models\RecruiterWebsite;
 use Closure;
-use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
 
 class VerfiyWebsiteAccess
@@ -19,24 +18,26 @@ class VerfiyWebsiteAccess
      */
     public function handle(Request $request, Closure $next)
     {
-
-        // return throw new ModelNotFoundException();
-
         $recruiter = Recruiter::query()
-            // ->where('franchise_slug',request('recruiter'))
-            ->findOrFail(request('recruiter_id'),'franchise_slug');
-        // if(!$recruiter){
-        //     dd(1);
-        //     abort(403, 'Access denied');
-        // }else{
-        //     $hasWebsite = RecruiterWebsite::where('status','active')
-        //                     ->where('franchise_id',$recruiter->franchise_id)
-        //                     ->first();
-        //     if(!$hasWebsite){
-        //         abort(403, 'Access denied');
-        //     }
-        // }
+            ->where('franchise_slug',request('recruiter'))
+            ->first();
+        if(!$recruiter){
+
+            return abort(403, 'Access denied');
+        }else{
+            $hasWebsite = RecruiterWebsite::where('status','active')
+                            ->where('franchise_id',$recruiter->franchise_id)
+                            ->first();
+            if(!$hasWebsite){
+                return abort(403, 'Access denied');
+            }
+        }
 
         return $next($request);
+    }
+
+    public function render($request, Exception $exception)
+    {
+        return response()->view('errors.403', [], 403);
     }
 }
