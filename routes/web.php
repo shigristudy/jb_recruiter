@@ -26,6 +26,8 @@ Route::group(['prefix' => '{recruiter}'], function () {
 Route::get('not_found',[GeneralController::class,'error_404'])->name('not_found');
 
 Route::get('/artisan/cache-clear', function () {
+    $exitCode = Artisan::call('route:clear');
+    $exitCode = Artisan::call('cache:clear');
     $exitCode = Artisan::call('config:cache');
     return $exitCode;
 });
