@@ -18,7 +18,7 @@ class VerfiyWebsiteAccess
      */
     public function handle(Request $request, Closure $next)
     {
-        // return abort("404");
+        return abort(404);
         $recruiter = Recruiter::query()
             ->where('franchise_slug',request('recruiter'))
             ->first();
