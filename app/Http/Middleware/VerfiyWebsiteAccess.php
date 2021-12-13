@@ -23,16 +23,12 @@ class VerfiyWebsiteAccess
             ->where('franchise_slug',request('recruiter'))
             ->first();
         if(!$recruiter){
-            return response()->view('errors.404', [], 404);
-            exit;
-            dd(1);
             abort(403, 'Access denied');
         }else{
             $hasWebsite = RecruiterWebsite::where('status','active')
                             ->where('franchise_id',$recruiter->franchise_id)
                             ->first();
             if(!$hasWebsite){
-                return response()->view('errors.404', [], 404);
                 abort(403, 'Access denied');
             }
         }

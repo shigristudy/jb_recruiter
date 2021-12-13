@@ -15,7 +15,7 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
 
-        $excludedViews = ['mail.contact','mail.apply','errors.404'];
+        $excludedViews = ['mail.contact','mail.apply'];
 
         view()->composer('*', function ($view) use($excludedViews) {
 
