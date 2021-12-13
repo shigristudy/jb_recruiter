@@ -22,8 +22,8 @@ class VerfiyWebsiteAccess
         $recruiter = Recruiter::query()
             ->where('franchise_slug',request('recruiter'))
             ->first();
-            dd(1,$recruiter);
         if(!$recruiter){
+            dd(1);
             abort(404);
         }else{
             $hasWebsite = RecruiterWebsite::where('status','active')->where('franchise_id',$recruiter->franchise_id)->first();
