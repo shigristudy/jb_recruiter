@@ -23,11 +23,13 @@ class VerfiyWebsiteAccess
             ->where('franchise_slug',request('recruiter'))
             ->first();
         if(!$recruiter){
-            return abort(404);
+            return abort('404');
         }else{
-            $hasWebsite = RecruiterWebsite::where('status','active')->where('franchise_id',$recruiter->franchise_id)->first();
+            $hasWebsite = RecruiterWebsite::where('status','active')
+                            ->where('franchise_id',$recruiter->franchise_id)
+                            ->first();
             if(!$hasWebsite){
-                return abort(404);
+                return abort('404');
             }
         }
 
