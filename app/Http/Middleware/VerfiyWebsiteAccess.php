@@ -24,6 +24,7 @@ class VerfiyWebsiteAccess
             ->first();
         if(!$recruiter){
             return response()->view('errors.404', [], 404);
+            exit;
             dd(1);
             abort(403, 'Access denied');
         }else{
