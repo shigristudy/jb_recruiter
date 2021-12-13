@@ -19,7 +19,9 @@ class VerfiyWebsiteAccess
      */
     public function handle(Request $request, Closure $next)
     {
-        throw (new ModelNotFoundException());
+
+        return throw new ModelNotFoundException();
+
         // $recruiter = Recruiter::query()
         //     ->where('franchise_slug',request('recruiter'))
         //     ->first();
