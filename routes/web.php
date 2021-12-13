@@ -11,10 +11,10 @@ Route::get('/',function(){
 
 Route::group(['prefix' => '{recruiter}'], function () {
 
-    Route::get('/', [GeneralController::class,'home'])->name('home');
+    Route::get('/', [GeneralController::class,'home'])->name('home')->middleware('verify_website');
 
-    Route::get('job', [JobsController::class,'job'])->name('job');
-    Route::get('jobs', [JobsController::class,'jobs'])->name('jobs');
+    Route::get('job', [JobsController::class,'job'])->name('job')->middleware('verify_website');
+    Route::get('jobs', [JobsController::class,'jobs'])->name('jobs')->middleware('verify_website');
     Route::get('getAllJobs',[JobsController::class,'getAllJobs'])->name('getAllJobs');
     Route::post('apply_job',[GeneralController::class,'apply_job'])->name('apply_job');
 

@@ -20,7 +20,7 @@ class Controller extends BaseController
             ->where('franchise_slug',request('recruiter'))
             ->first();
         if(!$recruiter){
-            abort(403, 'Access denied');
+            return abort(403, 'Access denied');
         }
         return $recruiter;
     }
