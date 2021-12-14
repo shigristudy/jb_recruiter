@@ -18,7 +18,6 @@ class VerfiyWebsiteAccess
      */
     public function handle(Request $request, Closure $next)
     {
-        // abort(404);
         $recruiter = Recruiter::query()
             ->where('franchise_slug',request('recruiter'))
             ->first();
@@ -34,12 +33,11 @@ class VerfiyWebsiteAccess
         }else{
             return abort(403, 'Access denied');
         }
+        return $next($request);
 
     }
 
-    // public function render($request, Exception $exception)
-    // {
-    //     dd($exception);
-    //     return response()->view('errors.403', [], 403);
-    // }
+    public function render($request, Exception $exception)
+    {
+    }
 }

@@ -14,10 +14,12 @@ class GeneralController extends Controller
 {
     public function home()
     {
+        // abort(404);
         $recruiter = Recruiter::query()
                             ->with('employers')
                             ->where('franchise_slug',request('recruiter'))
                             ->first();
+
         $employers = $recruiter->employers->pluck('id')->toArray();
 
         $jobs = RecruiterJob::query()
@@ -131,7 +133,7 @@ class GeneralController extends Controller
     }
 
     public function error_404(){
-        return "Not Found";
+        dd(1);
     }
 
 

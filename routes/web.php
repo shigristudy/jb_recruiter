@@ -23,7 +23,6 @@ Route::group(['prefix' => '{recruiter}'], function () {
     Route::post('send_contact_us',[GeneralController::class,'send_contact_us'])->name('send_contact_us');
 });
 
-Route::get('not_found',[GeneralController::class,'error_404'])->name('not_found');
 
 Route::get('/artisan/cache-clear', function () {
     $exitCode = Artisan::call('route:clear');
