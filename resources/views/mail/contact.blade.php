@@ -350,7 +350,7 @@
                 <table role="presentation" border="0" cellpadding="0" cellspacing="0">
                   <tr>
                     <td class="content-block powered-by" style="color:#FFF;background:{{ $color }};">
-                        <img style="width: 150px;" src="https://login.job-bank.co.uk/assets/recruiter_website/1/scoople-logo%20(2).png" alt="">
+                        <img style="width: 150px;" src="{{ $image }}" alt="">
                     </td>
                   </tr>
                 </table>
