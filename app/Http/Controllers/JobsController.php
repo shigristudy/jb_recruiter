@@ -27,12 +27,12 @@ class JobsController extends Controller
     public function job($recruiter)
     {
         if( request('type') == 1 ){
-            $job = RecruiterJob::query()->with('employer')->findOrFail(request('job_id'));
+            $job = RecruiterJob::query()->where('status','live')->with('employer')->findOrFail(request('job_id'));
             if( $job->employer->franchise_id != $this->getRecruiter()->franchise_id ){
                 return abort('404');
             }
         }else if(request('type') == 2){
-            $job = EmployerJob::query()->with('employer.detail')->findOrFail(request('job_id'));
+            $job = EmployerJob::query()->where('status','live')->with('employer.detail')->findOrFail(request('job_id'));
         }else{
             return abort('404');
         }
