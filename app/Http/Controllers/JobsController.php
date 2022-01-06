@@ -42,18 +42,23 @@ class JobsController extends Controller
 
     public function getAllJobs()
     {
-        $query = EmployerJob::query()->with('employer.detail')->where('status','live');
+        $query = EmployerJob::query()->with('employer.detail');
 
         if (request('search') != null && request('search') != "") {
-            $query = $query->where('title', 'like', '%' . request('search') . '%');
-            $query = $query->orWhere('type', 'like', '%' . request('search') . '%');
-            $query = $query->orWhere('salary', 'like', '%' . request('search') . '%');
-            $query = $query->orWhere('postcode', 'like', '%' . request('search') . '%');
-            $query = $query->orWhere('industry_sectors', 'like', '%' . request('search') . '%');
-            $query = $query->orWhere('town_city', 'like', '%' . request('search') . '%');
+            $query->where(function($query){
+                $query
+                ->where('title', 'like', '%' . request('search') . '%')
+                ->orWhere('type', 'like', '%' . request('search') . '%')
+                ->orWhere('salary', 'like', '%' . request('search') . '%')
+                ->orWhere('postcode', 'like', '%' . request('search') . '%')
+                ->orWhere('industry_sectors', 'like', '%' . request('search') . '%')
+                ->orWhere('town_city', 'like', '%' . request('search') . '%');
+            });
         }
 
-        $EmployerJobs = $query->orderBy('date_posted', 'DESC')->paginate(15);
+        $EmployerJobs = $query->where('status','live')
+                            ->orderBy('date_posted', 'DESC')
+                            ->paginate(15);
 
         $recruiter = Recruiter::query()
                             ->with('employers')
