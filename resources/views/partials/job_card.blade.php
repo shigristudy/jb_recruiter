@@ -7,7 +7,7 @@
                     <h4>{{ $job->title }}</h4>
                 </a>
                 <ul>
-
+                    @if ($job->is_gold)
                     <li class="mr-min">
                         @if ($job->country == 'uk')
                             <svg xmlns="http://www.w3.org/2000/svg" class="flag-icons" viewBox="0 0 640 480">
@@ -30,6 +30,7 @@
                             </svg>
                         @endif
                     </li>
+                    @endif
                     <li>{{ $job->town_city }}</li>
                     <li>{{ $job->salary }}</li>
                 </ul>
