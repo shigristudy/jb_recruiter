@@ -95,6 +95,9 @@
             width: 20px;
             height: 20px;
         }
+        .mr-min{
+            margin-right: 10px;
+        }
 
     </style>
 </head>

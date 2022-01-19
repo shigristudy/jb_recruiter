@@ -7,9 +7,8 @@
                     <h4>{{ $job->title }}</h4>
                 </a>
                 <ul>
-                    <li>{{ $job->town_city }}</li>
-                    <li>{{ $job->salary }}</li>
-                    <li>
+
+                    <li class="mr-min">
                         @if ($job->country == 'uk')
                             <svg xmlns="http://www.w3.org/2000/svg" class="flag-icons" viewBox="0 0 640 480">
                                 <path fill="#012169" d="M0 0h640v480H0z"/>
@@ -31,6 +30,8 @@
                             </svg>
                         @endif
                     </li>
+                    <li>{{ $job->town_city }}</li>
+                    <li>{{ $job->salary }}</li>
                 </ul>
                 {{-- <a class="employer_display_as">{{ $job->employer->detail->display_as }}</a> --}}
             </div>
