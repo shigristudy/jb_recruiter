@@ -96,7 +96,7 @@
             height: 20px;
         }
         .mr-min{
-            margin-right: 10px;
+            margin-right: 10px !important;
         }
 
     </style>
