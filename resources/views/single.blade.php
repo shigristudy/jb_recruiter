@@ -61,7 +61,7 @@
                     <div class="col-md-12">
                         <strong>Country: </strong>
                         <label>
-                            {{ config('flags.'.$job->country) }}
+                            {!! config('flags.'.$job->country) !!}
                         </label>
                     </div>
                 </div>
