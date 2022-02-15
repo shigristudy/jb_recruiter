@@ -8,7 +8,7 @@
                 </a>
                 <ul>
                     <li class="mr-min">
-                        {{ 'flags.'.$job->country }}
+
                         {!! config('flags.'.$job->country) !!}
                     </li>
                     <li>{{ $job->town_city }}</li>
