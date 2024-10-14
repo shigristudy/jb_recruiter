@@ -94,6 +94,9 @@
                         <a class="nav-link" data-scroll href="{{ $route_prefix }}listings">Jobs</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" data-scroll href="{{ $route_prefix }}courses">Courses</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" data-scroll href="{{ $route_prefix }}contact-us">Contact Us</a>
                     </li>
                     <li class="nav-item">

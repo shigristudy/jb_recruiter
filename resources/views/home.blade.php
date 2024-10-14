@@ -13,6 +13,18 @@
     </div>
 </section>
 
+<!-- Courses Section -->
+<section id="listings" class="services">
+    <div class="container">
+        <h2>Featured Courses</h2>
+        @include('partials.course_card')
+
+        <br>
+
+        <a class="explore-all-jobs" href="{{ route('courses',request('recruiter')) }}">EXPLORE ALL COURSES</a>
+    </div>
+</section>
+
 <!-- ABOUT SECTION -->
 <section class="about" id="about-us" style="background: #f5f5f578;padding-top: 50px;padding-bottom: 40px;">
     <div class="container">

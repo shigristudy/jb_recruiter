@@ -37,7 +37,11 @@ class GeneralController extends Controller
                                 ->take(5)
                                 ->get();
         }
-        return view('home', compact('jobs'));
+
+        $courses = Service::query()>orderBy('created_at', 'DESC')->where('type','products')->take(5)->get();
+
+
+        return view('home', compact('jobs','courses'));
     }
 
     public function send_contact_us(Request $request)
