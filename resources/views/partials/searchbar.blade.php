@@ -6,7 +6,12 @@
         <div class="row mt-auto">
             <div class="col-lg-12 col-sm-12 ">
                 <div class="text-center text-lg-left">
-                    <h1 class="text-center display-3 text-white font-weight-bold text-shadow">SEARCH JOBS</h1>
+                    @php
+                        $currentRoute = Route::currentRouteName();
+                        $title = ($currentRoute == 'courses') ? 'COURSES' : 'JOBS';
+                        $placeholder = ($currentRoute == 'courses') ? 'e.g. Course Title' : 'e.g. Job Title';
+                    @endphp
+                    <h1 class="text-center display-3 text-white font-weight-bold text-shadow">SEARCH {{ $title }}</h1>
                 </div>
 
             </div>
@@ -18,7 +23,7 @@
                         <form id="search_form" method="GET" action="{{ route('jobs',request('recruiter')) }}">
                             <div class="form-row">
                                 <div class="col-md-9 col-sm-12">
-                                    <input type="text" class="form-control mb-2 border-0 search_box" name="search" placeholder="Keyword: e.g. Job Title">
+                                    <input type="text" class="form-control mb-2 border-0 search_box" name="search" placeholder="Keyword: e.g. {{ $placeholder }}">
 
                                 </div>
                                 <div class="col-md-3 col-sm-12">

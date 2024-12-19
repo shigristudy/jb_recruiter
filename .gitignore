@@ -2,7 +2,9 @@
 /public/hot
 /public/storage
 /storage/*.key
+/storage/*
 /vendor
+/vendor_old
 .env
 .env.backup
 .phpunit.result.cache
@@ -15,3 +17,15 @@ yarn-error.log
 /.vscode
 /config/app.php
 server.php
+recruiter-zip1.zip
+storage/app/.gitignore
+storage/app/public/.gitignore
+storage/framework/.gitignore
+storage/framework/cache/.gitignore
+storage/framework/cache/data/.gitignore
+storage/framework/sessions/.gitignore
+storage/framework/testing/.gitignore
+storage/framework/views/.gitignore
+storage/logs/.gitignore
+ recruiter-zip1.zip
+loginjob_jobbank_live_new_2024-10-01_14-39-27.sql.zip

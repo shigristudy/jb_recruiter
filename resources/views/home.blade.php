@@ -14,7 +14,7 @@
 </section>
 
 <!-- Courses Section -->
-<section id="listings" class="services">
+<section id="courses" class="services">
     <div class="container">
         <h2>Featured Courses</h2>
         @include('partials.course_card')

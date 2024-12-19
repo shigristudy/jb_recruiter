@@ -3,7 +3,7 @@
   <head>
     <meta name="viewport" content="width=device-width" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>Job Application</title>
+    <title>{{$page_type}}</title>
     <style>
       /* -------------------------------------
           GLOBAL RESETS
@@ -338,7 +338,7 @@
     </style>
   </head>
   <body class="">
-    <span class="preheader">Job Application</span>
+    <span class="preheader">{{  $page_type }}</span>
     <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="body">
       <tr>
         <td>&nbsp;</td>
@@ -366,7 +366,7 @@
                     <tr>
                         <td>
                             <p class="wider">Hello,</p>
-                            <p>You have recieved a Job Application for, {{ $title }} ({{ $location }}).</p>
+                            <p>You have recieved a {{ $page_type}} for, {{ $title }} ({{ $location }}).</p>
                             <br>
                             <p class="wider"><b>Details: </b></p>
                             <p><b>Name:</b> {{ $name }} </p>

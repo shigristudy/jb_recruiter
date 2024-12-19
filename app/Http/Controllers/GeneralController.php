@@ -6,6 +6,7 @@ use App\Models\EmployerJob;
 use App\Models\Recruiter;
 use App\Models\RecruiterJob;
 use App\Models\RecruiterWebsite;
+use App\Models\Service;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
@@ -38,7 +39,7 @@ class GeneralController extends Controller
                                 ->get();
         }
 
-        $courses = Service::query()>orderBy('created_at', 'DESC')->where('type','products')->take(5)->get();
+        $courses = Service::query()->orderBy('created_at', 'DESC')->where('type','products')->take(5)->get();
 
 
         return view('home', compact('jobs','courses'));
@@ -89,9 +90,14 @@ class GeneralController extends Controller
         $file = file_get_contents($request->file);
         $filename = $request->file->getClientOriginalName();
         if( $request->type == 1 ){
+            $page_type = "Job Application";
             $job = RecruiterJob::query()->with('employer')->findOrFail($request->job_id);
         }else if($request->type == 2){
+            $page_type = "Job Application";
             $job = EmployerJob::query()->with('employer.detail')->findOrFail($request->job_id);
+        } else if($request->type == 3){
+            $page_type = "Course Application";
+            $job = Service::query()->with('employer')->findOrFail($request->job_id);
         }
         if($job){
             $title = $job->title;
@@ -113,12 +119,14 @@ class GeneralController extends Controller
                 'color' => $color,
                 'image' => $image,
                 'title' => $title,
-                'location' => $location
+                'location' => $location,
+                'page_type' => $page_type
             ),
             function ($message) use ($data,$file,$filename,$recipents) {
                 $message->subject('Job Application');
                 $message->from('no-reply@job-bank.co.uk');
                 foreach ($recipents as $key => $recipent) {
+                    // $message->to("kabeerhussain14@gmail.com");
                     $message->to($recipent);
                 }
                 $message->attachData($file, $filename);

@@ -12,7 +12,15 @@
     </div>
 </section>
 @endsection
+@php
 
+// if current route is job then set endpoint to getJobs
+if(Route::currentRouteName() == 'jobs'){
+    $ENDPOINT = 'getAllJobs';
+}else{
+    $ENDPOINT = 'getAllCourses';
+}
+@endphp
 @push('script')
 <script>
     function getParameterByName(name, url) {
@@ -48,12 +56,12 @@
 
     function getJobs(page=null,search=null){
 
-        if( !page && !search){
-            page = "{{ route('getAllJobs',['recruiter'=>request('recruiter')]) }}";
-        }else if(page){
-            page = "{{ route('getAllJobs',['recruiter'=>request('recruiter')]) }}?page="+page;
-        }else{
-            page = "{{ route('getAllJobs',['recruiter'=>request('recruiter')]) }}?search="+search;
+        if (!page && !search) {
+            page = "{{ route($ENDPOINT, ['recruiter' => request('recruiter')]) }}";
+        } else if (page) {
+            page = "{{ route($ENDPOINT, ['recruiter' => request('recruiter')]) }}?page=" + page;
+        } else {
+            page = "{{ route($ENDPOINT, ['recruiter' => request('recruiter')]) }}?search=" + search;
         }
 
         $.ajax({

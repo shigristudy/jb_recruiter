@@ -17,17 +17,11 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 ">
-                <h2 class="">{{ $job->title }}</h2>
+                <h2 style="">{{ $job->title }}</h2>
                {!! $job->description !!}
             </div>
             <div class="col-md-4 border_color h-100">
-                <h2 class="border-bottom">JOB SUMMARY</h2>
-                <div class="row">
-                    <div class="col-md-12">
-                        <strong>Job Type: </strong>
-                        <label>{{ ucfirst($job->type) }}</label>
-                    </div>
-                </div>
+                <h2 class="border-bottom" style="font-size:28px;">COURSE SUMMARY</h2>
                 {{-- <div class="row">
                     <div class="col-md-12">
                         <strong>Employer: </strong>
@@ -41,17 +35,17 @@
 
                 <div class="row">
                     <div class="col-md-12">
-                        <strong>Salary: </strong>
-                        <label>{{ $job->salary }}</label>
+                        <strong>Price: </strong>
+                        <label>{{ $job->price }}</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-12">
-                        <strong>Town/City: </strong>
-                        <label>{{ $job->town_city }}</label>
+                        <strong>Category: </strong>
+                        <label>{{ $job->category->name }}</label>
                     </div>
                 </div>
-                <div class="row">
+                {{-- <div class="row">
                     <div class="col-md-12">
                         <strong>Postcode: </strong>
                         <label>{{ $job->postcode }}</label>
@@ -64,7 +58,7 @@
                             {!! config('flags.'.$job->country) !!}
                         </label>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>

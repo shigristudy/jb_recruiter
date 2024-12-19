@@ -14,14 +14,20 @@ Route::group(['prefix' => '{recruiter}'], function () {
     Route::get('/', [GeneralController::class,'home'])->name('home')->middleware('verify_website');
 
     Route::get('job', [JobsController::class,'job'])->name('job')->middleware('verify_website');
+    Route::get('course', [JobsController::class,'course'])->name('course')->middleware('verify_website');
+    Route::get('courses', [JobsController::class,'courses'])->name('courses')->middleware('verify_website');
     Route::get('jobs', [JobsController::class,'jobs'])->name('jobs')->middleware('verify_website');
     Route::get('getAllJobs',[JobsController::class,'getAllJobs'])->name('getAllJobs');
     Route::post('apply_job',[GeneralController::class,'apply_job'])->name('apply_job');
-
+    
+    Route::get('get-all-courses',[JobsController::class,'getAllCourses'])->name('getAllCourses');
     Route::get('privacy',[GeneralController::class,'privacy'])->name('privacy');
 
     Route::post('send_contact_us',[GeneralController::class,'send_contact_us'])->name('send_contact_us');
 });
+
+// LMS Public Routes
+Route::get('lms/courses', [JobsController::class,'course_details'])->name('course_details')->middleware('verify_website');
 
 
 Route::get('/artisan/cache-clear', function () {

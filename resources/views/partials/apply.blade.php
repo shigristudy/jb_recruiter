@@ -61,9 +61,7 @@
 @push('script')
 <script>
     $(document).ready(function(){
-
         $(document).on('change','input[type="file"]',function(e){
-            console.log('here')
             var fileName = e.target.files[0].name;
             $('.custom-file-label').html(fileName);
         });
@@ -80,6 +78,9 @@
             var formData = new FormData(document.querySelector('#send_message_form'))
             formData.append('file', $('#file_uploader')[0].files[0]);
 
+            // laravel get current URL name
+            var currentRoute = "{{ Route::currentRouteName() }}";
+            formData.append('route', currentRoute);
             $.ajax({
                 url:"{{ route('apply_job',request('recruiter')) }}",
                 method:'POST',

@@ -8,6 +8,7 @@ use App\Models\EmployerJob;
 use App\Models\Recruiter;
 use App\Models\RecruiterEmployer;
 use App\Models\RecruiterJob;
+use App\Models\Service;
 use Illuminate\Http\Request;
 
 class JobsController extends Controller
@@ -17,6 +18,18 @@ class JobsController extends Controller
         $jobs = EmployerJob::query()
             ->where('status','live')
             ->orderBy('date_posted', 'DESC')
+            ->paginate(30);
+        $paginate = true;
+        $uploader = 0;
+
+        return view('listing', compact('jobs','paginate','uploader'));
+    }
+
+    public function courses()
+    {
+        $jobs = Service::query()
+            ->where('type','products')
+            ->orderBy('created_at', 'DESC')
             ->paginate(30);
         $paginate = true;
         $uploader = 0;
@@ -38,6 +51,16 @@ class JobsController extends Controller
         }
 
         return view('single',compact('job'));
+    }
+    
+    public function course($recruiter)
+    {
+        $job = Service::query()->where('type','products')->with('employer')->findOrFail(request('job_id'));
+        // if( $job->employer->franchise_id != $this->getRecruiter()->franchise_id ){
+        //     return abort('404');
+        // }
+
+        return view('single_course',compact('job'));
     }
 
     public function getAllJobs()
@@ -93,6 +116,28 @@ class JobsController extends Controller
 
         $html .= view('partials.job_card')->with([
             'jobs'     => $EmployerJobs,
+            'uploader' => 2,
+            'paginate' => true
+        ])->render();
+
+        return response()->json([
+            'success' => 1,
+            'html'    => $html,
+        ]);
+    }
+
+
+    public function getAllCourses() {
+        $courses = Service::query()->where('type','products')->orderBy('created_at', 'DESC');
+
+        if(request('search')){
+            $courses->where('title', 'like', '%' . request('search') . '%');
+        }
+
+        $courses = $courses->paginate(15);
+
+        $html = view('partials.course_card')->with([
+            'courses'     => $courses,
             'uploader' => 2,
             'paginate' => true
         ])->render();
