@@ -1,9 +1,10 @@
 <!-- TOP BAR SECTION -->
 <style>
-    .top-bar{
+    .top-bar {
         background: gray;
         padding: 7px;
     }
+
     .top-bar ul li {
         border-right: 1px solid #FFF;
     }
@@ -12,9 +13,13 @@
         color: #FFF;
         /* color: {{ $recruiter_website->color_code }} */
     }
-    .navbar-light .navbar-nav .nav-link{
-        color: #FFF;
 
+    .navbar-light .navbar-nav .nav-link {
+        color: #FFF;
+        font-size: 0.8rem;
+    }
+    .navbar-light .nav-item{
+        padding: 0 5px;
     }
 </style>
 <div class="top-bar">
@@ -22,31 +27,31 @@
         <nav class="flex-wrap d-flex justify-content-center-or-between">
             <ul class="d-flex mb-0 left">
                 @if ($recruiter_website->facebook)
-                    <li><a href="{{ $recruiter_website->facebook }}"><i class="fa fa-facebook-f"></i></a></li>
+                <li><a href="{{ $recruiter_website->facebook }}"><i class="fa fa-facebook-f"></i></a></li>
                 @endif
                 @if ($recruiter_website->twitter && !empty($recruiter_website->twitter))
-                    <li><a href="{{ $recruiter_website->twitter }}"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="{{ $recruiter_website->twitter }}"><i class="fa fa-twitter"></i></a></li>
                 @endif
                 @if ($recruiter_website->instagram && !empty($recruiter_website->instagram))
-                    <li><a href="{{ $recruiter_website->instagram }}"><i class="fa fa-instagram"></i></a></li>
+                <li><a href="{{ $recruiter_website->instagram }}"><i class="fa fa-instagram"></i></a></li>
                 @endif
                 @if ($recruiter_website->linkedin && !empty($recruiter_website->linkedin))
-                    <li><a href="{{ $recruiter_website->linkedin }}"><i class="fa fa-linkedin"></i></a></li>
+                <li><a href="{{ $recruiter_website->linkedin }}"><i class="fa fa-linkedin"></i></a></li>
                 @endif
                 @if ($recruiter_website->youtube && !empty($recruiter_website->youtube))
-                    <li><a href="{{ $recruiter_website->youtube }}"><i class="fa fa-youtube"></i></a></li>
+                <li><a href="{{ $recruiter_website->youtube }}"><i class="fa fa-youtube"></i></a></li>
                 @endif
                 @if ($recruiter_website->reddit && !empty($recruiter_website->reddit))
-                    <li><a href="{{ $recruiter_website->reddit }}"><i class="fa fa-reddit"></i></a></li>
+                <li><a href="{{ $recruiter_website->reddit }}"><i class="fa fa-reddit"></i></a></li>
                 @endif
                 @if ($recruiter_website->pinterest && !empty($recruiter_website->pinterest))
-                    <li><a href="{{ $recruiter_website->pinterest }}"><i class="fa fa-pinterest"></i></a></li>
+                <li><a href="{{ $recruiter_website->pinterest }}"><i class="fa fa-pinterest"></i></a></li>
                 @endif
                 @if ($recruiter_website->snapchat && !empty($recruiter_website->snapchat))
-                    <li><a href="{{ $recruiter_website->snapchat }}"><i class="fa fa-snapchat"></i></a></li>
+                <li><a href="{{ $recruiter_website->snapchat }}"><i class="fa fa-snapchat"></i></a></li>
                 @endif
                 @if ($recruiter_website->tiktok && !empty($recruiter_website->tiktok))
-                    <li><a href="{{ $recruiter_website->tiktok }}"><i class="fa fa-tiktok"></i></a></li>
+                <li><a href="{{ $recruiter_website->tiktok }}"><i class="fa fa-tiktok"></i></a></li>
                 @endif
 
             </ul>
@@ -64,11 +69,12 @@
         <nav class="navbar navbar-expand-lg navbar-light ">
             <!-- Change Logo Img Here -->
             <a class="navbar-brand" href="{{ route('home',request('recruiter')) }}">
-                <img style="max-width: 150px;" src="{{ config('app.job_bank_url') }}assets/recruiter_website/{{ $recruiter_website->franchise_id }}/{{ $recruiter_website->logo }}" alt="">
+                <img style="max-width: 150px;"
+                    src="{{ config('app.job_bank_url') }}assets/recruiter_website/{{ $recruiter_website->franchise_id }}/{{ $recruiter_website->logo }}"
+                    alt="">
             </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse"
-                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <div class="interactive-menu-button">
                     <a href="#">
                         <span>Menu</span>
@@ -76,31 +82,41 @@
                 </div>
             </button>
             @php
-                $route_prefix = url('/')  . '/' . request('recruiter') . "#";
-                if ( request()->route()->getName() == "home" ){
-                    $route_prefix = "#";
-                }
+            $route_prefix = url('/') . '/' . request('recruiter') . "#";
+            if ( request()->route()->getName() == "home" ){
+            $route_prefix = "#";
+            }
             @endphp
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" data-scroll href="{{ route('home',request('recruiter')) }}">Home<span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-scroll href="{{ $route_prefix }}about-us">About Us</a>
-                    </li>
-
+                    {{-- <li class="nav-item active">
+                        <a class="nav-link" data-scroll href="{{ route('home',request('recruiter')) }}">Home<span
+                                class="sr-only">(current)</span></a>
+                    </li> --}}
                     <li class="nav-item">
                         <a class="nav-link" data-scroll href="{{ $route_prefix }}listings">Jobs</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-scroll href="{{ $route_prefix }}courses">Courses</a>
+                        <a class="nav-link" data-scroll href="{{ $route_prefix }}lms_courses">Online Courses</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-scroll href="{{ $route_prefix }}contact-us">Contact Us</a>
+                        <a class="nav-link" data-scroll href="{{ $route_prefix }}communities">Communities</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link px-3" style="border: 2px solid white;" data-scroll href="{{ config('app.job_bank_url') . $franchise->franchise_slug }}">Login</a>
+                        <a class="nav-link" data-scroll href="{{ $route_prefix }}courses">Retail</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-scroll href="{{ $route_prefix }}digital-books">Digital Books</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-scroll href="{{ $route_prefix }}coaches">Coaching</a>
+                    </li>
+                    {{-- <li class="nav-item">
+                        <a class="nav-link" data-scroll href="{{ $route_prefix }}shop">Shop</a>
+                    </li> --}}
+                    <li class="nav-item">
+                        <a class="nav-link px-3" style="border: 2px solid white;" data-scroll
+                            href="{{ config('app.job_bank_url') . $franchise->franchise_slug }}">Login</a>
                     </li>
                 </ul>
             </div>

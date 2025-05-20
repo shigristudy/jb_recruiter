@@ -2,12 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Coach;
+use App\Models\Community;
+use App\Models\Course;
+use App\Models\DigitalBook;
 use App\Models\EmployerJob;
 use App\Models\Recruiter;
 use App\Models\RecruiterJob;
 use App\Models\RecruiterWebsite;
 use App\Models\Service;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 
@@ -41,8 +46,16 @@ class GeneralController extends Controller
 
         $courses = Service::query()->orderBy('created_at', 'DESC')->where('type','products')->take(5)->get();
 
+        $franchise_id = $recruiter->franchise_id;
+        $lmscourses = Course::query()->where('franchise_id', $franchise_id)->orderBy('created_at', 'DESC')->take(5)->get();
+        $communities = Community::query()->where('franchise_id', $franchise_id)->orderBy('created_at', 'DESC')->take(5)->get();
 
-        return view('home', compact('jobs','courses'));
+        $books = DigitalBook::query()->where('franchise_id', $franchise_id)->orderBy('created_at', 'DESC')->take(5)->get();
+        $coaches = Coach::query()->where('franchise_id', $franchise_id)->orderBy('created_at', 'DESC')->take(5)->get();
+
+        $products = DB::table('lms_products')->where('franchise_id', $franchise_id)->orderBy('created_at', 'DESC')->take(5)->get();
+
+        return view('home', compact('jobs','courses','lmscourses','communities','books','coaches','products'));
     }
 
     public function send_contact_us(Request $request)

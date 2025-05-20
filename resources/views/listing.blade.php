@@ -6,7 +6,11 @@
     <div class="container">
 
         <div class="custom_tab_content active job_cards mb-4">
-            @include('partials.job_card')
+            @if(Route::currentRouteName() == 'jobs')
+                @include('partials.job_card')
+            @else
+                @include('partials.course_card')
+            @endif
         </div>
 
     </div>

@@ -27,14 +27,14 @@ class JobsController extends Controller
 
     public function courses()
     {
-        $jobs = Service::query()
+        $courses = Service::query()
             ->where('type','products')
             ->orderBy('created_at', 'DESC')
             ->paginate(30);
         $paginate = true;
         $uploader = 0;
 
-        return view('listing', compact('jobs','paginate','uploader'));
+        return view('listing', compact('courses','paginate','uploader'));
     }
 
     public function job($recruiter)
@@ -148,8 +148,3 @@ class JobsController extends Controller
         ]);
     }
 }
-
-
-// id,employer_id,employer_contact_id,title,slug,description,type,salary,town_city,postcode,lat,lng,potential_billings,date_posted,industry_sectors,company_logo,created_datetime,status
-
-// id,employer_id,title,slug,description,type,salary,town_city,postcode,lat,lng,potential_billings,date_posted,industry_sectors,recruiter_notes,created_datetime,status,country,is_gold,number_of_positions,job_uploader

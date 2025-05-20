@@ -18,6 +18,21 @@
     <title>Job Bank | {{ ucfirst(request('recruiter')) }}</title>
     @stack('styles')
     <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .content-wrapper {
+            flex: 1 0 auto;
+        }
+        footer {
+            flex-shrink: 0;
+        }
         .btn-primary {
             background-color: {{ $recruiter_website->color_code }};
             border-color: {{ $recruiter_website->color_code }};
@@ -104,11 +119,10 @@
 <body>
 
     @include('layout.header')
-
-    @yield('content')
-
+    <div class="content-wrapper">
+        @yield('content')
+    </div>
     @include('layout.footer')
-
     @stack('script')
 
 </body>
